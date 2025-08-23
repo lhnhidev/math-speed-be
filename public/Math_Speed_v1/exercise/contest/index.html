@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="title">Chủ đề 1 - Level 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
+  </head>
+  <body>
+    <div class="w-full">
+      <div
+        class="container mx-auto max-w-6xl shadow-md grid grid-cols-6 justify-between px-5 py-10"
+      >
+        <div class="sm:col-span-4 col-span-6 sm:pr-10 pr-[unset]">
+          <div class="mb-4">
+            <h2
+              class="text-center font-bold text-2xl uppercase"
+              id="heading"
+            ></h2>
+            <hr class="mt-3" />
+          </div>
+          <div class="space-y-10" id="questions"></div>
+        </div>
+
+        <div class="fixed bottom-4 right-3">
+          <div
+            class="p-2 bg-slate-300/50 rounded-md text-center mb-3 font-bold text-3xl tracking-widest"
+            id="time"
+          >
+            12:20:30
+          </div>
+          <div class="flex gap-4 text-white">
+            <button
+              id="back2"
+              class="bg-[var(--primary-color)] shadow-md rounded-md px-5 py-2 hover:bg-[var(--thir-color)] transition-all"
+            >
+              Trở lại
+            </button>
+            <button
+              id="submit2"
+              class="bg-[var(--primary-color)] shadow-md rounded-md px-5 py-2 hover:bg-[var(--thir-color)] transition-all"
+            >
+              Nộp bài
+            </button>
+          </div>
+        </div>
+
+        <div class="col-span-2 w-full hidden sm:block">
+          <div class="mb-4">
+            <h2 class="font-bold text-2xl">Điều hướng nhanh</h2>
+            <hr class="mt-3" />
+          </div>
+          <div class="flex flex-wrap gap-2" id="navQuestion"></div>
+          <div class="flex gap-3 float-right mt-3">
+            <button
+              id="back"
+              class="px-3 py-1 font-bold underline hover:opacity-80 transition-all"
+            >
+              Trở lại
+            </button>
+            <button
+              id="submitButton"
+              class="px-3 py-1 font-bold underline hover:text-[var(--primary-color)] transition-all"
+            >
+              Nộp bài
+            </button>
+          </div>
+
+          <div class="mt-14" id="markBox"></div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden"
+      id="comfirmSubmit"
+    >
+      <div class="bg-white rounded-lg shadow-lg w-96 p-6 relative">
+        <h2 class="text-xl font-bold text-[var(--primary-color)] mb-4">
+          Bạn có muốn nộp bài?
+        </h2>
+        <p class="mb-6 text-gray-700">
+          Kết quả sẽ được lưu khi bạn nộp, và không thể thay đổi.
+        </p>
+        <div class="flex justify-end gap-3">
+          <button
+            class="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition"
+            id="cancelButton"
+          >
+            Hủy
+          </button>
+          <button
+            class="px-4 py-2 bg-[var(--primary-color)] text-white rounded hover:bg-[var(--thir-color)] transition"
+            id="comfirmButton"
+          >
+            Nộp
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden"
+      id="backModal"
+    >
+      <div class="bg-white rounded-lg shadow-lg w-96 p-6 relative">
+        <h2 class="text-xl font-bold text-[var(--primary-color)] mb-4">
+          Bạn có thoát?
+        </h2>
+        <p class="mb-6 text-gray-700">
+          Kết quả sẽ không được lưu khi bạn thoát.
+        </p>
+        <div class="flex justify-end gap-3">
+          <button
+            class="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition"
+            id="cancelBack"
+          >
+            Hủy
+          </button>
+          <button
+            class="px-4 py-2 bg-[var(--primary-color)] text-white rounded hover:bg-[var(--thir-color)] transition"
+            id="comfirmBack"
+          >
+            Thoát
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    localStorage.setItem("submit2", false);
+    localStorage.setItem("submit", false);
+  </script>
+  <script
+    type="module"
+    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/components/progress-bar/progress-bar.js"
+  ></script>
+
+  <script type="module" src="./back.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+
+  <script type="module" src="./chooseAns.js"></script>
+  <script type="module" src="./displayAns.js"></script>
+  <script type="module" src="./submit.js"></script>
+</html>

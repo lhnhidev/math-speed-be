@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lịch sử làm bài</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
+  </head>
+  <body>
+    <div class="w-full">
+      <div
+        class="container mx-auto max-w-6xl shadow-md grid grid-cols-6 justify-between px-5 py-10"
+      >
+        <div class="sm:col-span-4 col-span-6 sm:pr-10 pr-[unset]">
+          <div class="mb-4">
+            <h2 class="text-center font-bold text-2xl uppercase">
+              Lịch sử làm bài
+            </h2>
+            <hr class="mt-3" />
+          </div>
+          <div class="space-y-10" id="queList"></div>
+        </div>
+
+        <div class="col-span-2 w-full hidden sm:block">
+          <div class="mb-4">
+            <h2 class="font-bold text-2xl">Thông tin chi tiết</h2>
+            <hr class="mt-3" />
+          </div>
+          <div class="flex flex-wrap gap-2" id="historyNav"></div>
+
+          <div class="mt-14" id="descBox"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script type="module" src="./index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+</html>

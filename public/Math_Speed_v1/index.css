@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "Netflix Sans";
+  src: local("NetflixSans-Regular"),
+    url("./public/fonts/NetflixSans-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Netflix Sans";
+  font-weight: bold;
+  src: local("NetflixSans-Bold"),
+    url("./public/fonts/NetflixSans-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Netflix Sans";
+  font-weight: 600;
+  src: local("NetflixSans-Medium"),
+    url("./public/fonts/NetflixSans-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Netflix Sans";
+  font-weight: 300;
+  src: local("NetflixSans-Light"),
+    url("./public/fonts/NetflixSans-Light.woff2") format("woff2");
+}
+
+:root {
+  /* --primary-color: #c719de; */
+  --primary-color: #29cc57;
+  /* --thir-color: #ad00c4; */
+  --thir-color: #15b441;
+  --secondary-color: #f4f4f4;
+  --my-gradient: linear-gradient(
+    90deg,
+    rgba(165, 233, 214, 0.6),
+    rgba(165, 233, 214, 0.3)
+  );
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+body {
+  color: #354764;
+  line-height: 1.6;
+  font-family: "Netflix Sans", Inter, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overscroll-behavior: contain;
+}

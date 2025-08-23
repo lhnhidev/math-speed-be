@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng nhập - Đăng ký</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body class="min-h-screen flex items-center justify-center p-4">
+    <div
+      class="w-full max-w-4xl bg-white rounded-2xl shadow-xl overflow-hidden animate__animated animate__fadeInDown"
+    >
+      <div class="md:flex">
+        <div
+          class="md:block md:w-1/2 bg-gradient-to-b from-[#29cc57] to-[#1ea848] p-8 flex flex-col items-center justify-center"
+        >
+          <div class="text-white text-center mb-8">
+            <h1 class="text-3xl font-bold mb-2">Math Speed</h1>
+            <p class="opacity-90">Bứt phá Toán 9 - Chinh phục đề thi vào 10</p>
+          </div>
+
+          <div
+            class="floating-notebook bg-white rounded-lg shadow-sm py-5 px-10 mt-16 mb-10"
+          >
+            <img
+              src="../public/assets/img/logo.png"
+              alt="Math Speed logo"
+              class="w-full max-w-xs"
+            />
+          </div>
+
+          <div class="mt-8 text-white text-center">
+            <p class="text-sm opacity-80">"Học thông minh - Thi xuất sắc"</p>
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 p-8 md:p-10">
+          <div class="flex mb-8">
+            <div class="w-1/2 text-center tab active" id="login-tab">
+              Đăng Nhập
+            </div>
+            <div class="w-1/2 text-center tab" id="register-tab">Đăng Ký</div>
+          </div>
+
+          <div class="form-container" id="login-form">
+            <div class="study-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-[#29cc57]"
+              >
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path
+                  d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+                ></path>
+              </svg>
+            </div>
+
+            <form id="loginForm" class="space-y-7 mt-8">
+              <div class="input-group">
+                <i class="input-icon fa-solid fa-envelope"></i>
+                <input
+                  type="text"
+                  id="login-username"
+                  placeholder="Tên đăng nhập hoặc email"
+                  required
+                />
+                <div class="error-message" id="login-username-error"></div>
+              </div>
+
+              <div class="input-group">
+                <i class="input-icon fa-solid fa-lock"></i>
+                <input
+                  type="password"
+                  id="login-password"
+                  placeholder="Mật khẩu"
+                  required
+                />
+                <div class="error-message" id="login-password-error"></div>
+              </div>
+
+              <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center">
+                  <input
+                    type="checkbox"
+                    id="remember-me"
+                    class="w-4 h-4 text-[#29cc57] border border-gray-300 rounded focus:ring-[#29cc57]"
+                  />
+                  <label for="remember-me" class="ml-2 text-sm text-gray-600"
+                    >Ghi nhớ tôi</label
+                  >
+                </div>
+                <a href="#" class="text-sm text-[#29cc57] hover:underline"
+                  >Quên mật khẩu?</a
+                >
+              </div>
+
+              <button
+                type="submit"
+                class="btn-primary w-full py-3 rounded-lg font-medium"
+              >
+                Đăng Nhập
+              </button>
+            </form>
+
+            <div class="text-center mt-4">
+              <span class="text-sm text-gray-600">Chưa có tài khoản? </span>
+              <a
+                href="#"
+                id="show-register"
+                class="text-[#29cc57] font-medium hover:underline"
+                >Đăng ký ngay</a
+              >
+            </div>
+          </div>
+
+          <div class="form-container flipped" id="register-form">
+            <div class="study-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-[#29cc57]"
+              >
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="8.5" cy="7" r="4"></circle>
+                <line x1="20" y1="8" x2="20" y2="14"></line>
+                <line x1="23" y1="11" x2="17" y2="11"></line>
+              </svg>
+            </div>
+
+            <form id="registerForm" class="space-y-7 mt-8">
+              <div class="input-group">
+                <i class="input-icon fa-solid fa-envelope"> </i>
+                <input
+                  type="email"
+                  id="register-email"
+                  placeholder="Email"
+                  required
+                />
+                <div class="error-message" id="register-email-error"></div>
+              </div>
+
+              <div class="input-group">
+                <i class="input-icon fa-solid fa-lock"> </i>
+                <input
+                  type="password"
+                  id="register-password"
+                  placeholder="Mật khẩu"
+                  required
+                />
+                <div class="error-message" id="register-password-error"></div>
+              </div>
+
+              <div class="input-group">
+                <i class="input-icon fa-solid fa-lock"> </i>
+                <input
+                  type="password"
+                  id="register-confirm-password"
+                  placeholder="Xác nhận mật khẩu"
+                  required
+                />
+                <div
+                  class="error-message"
+                  id="register-confirm-password-error"
+                ></div>
+              </div>
+
+              <button
+                type="submit"
+                class="btn-primary w-full py-3 rounded-lg font-medium"
+              >
+                Đăng Ký
+              </button>
+            </form>
+
+            <div class="text-center mt-4">
+              <span class="text-sm text-gray-600">Đã có tài khoản? </span>
+              <a
+                href="#"
+                id="show-login"
+                class="text-[#29cc57] font-medium hover:underline"
+                >Đăng nhập ngay</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/notyf/notyf.min.js"></script>
+  <script type="module" src="./index.js"></script>
+</html>

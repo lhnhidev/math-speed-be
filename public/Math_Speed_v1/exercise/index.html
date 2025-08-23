@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MathSpeed - Luyện đề</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link rel="stylesheet" href="../index.css" />
+  </head>
+  <body>
+    <header
+      class="w-full bg-white/30 backdrop-blur-md shadow-sm flex justify-center items-center py-4 fixed top-0 left-0 right-0 z-50"
+    >
+      <div class="container mx-auto flex justify-between items-center px-4">
+        <div class="w-20 md:w-28 lg:w-36">
+          <img
+            src="../public/assets/img/logo.png"
+            alt="Logo_Math_Speed"
+            class="w-full"
+          />
+        </div>
+
+        <div
+          class="hidden md:flex items-center justify-center gap-10 lg:gap-14 md:gap-4"
+        >
+          <a
+            href="../index.html"
+            class="text-base lg:text-lg md:text-sm transition-all hover:text-[var(--primary-color)] cursor-pointer"
+          >
+            <i class="fa-solid fa-house"></i>
+            Trang chủ
+          </a>
+          <a
+            href="../learn/index.html"
+            class="text-base lg:text-lg md:text-sm transition-all hover:text-[var(--primary-color)] cursor-pointer"
+          >
+            <i class="fa-solid fa-book-open-reader"></i>
+            Học Tập
+          </a>
+          <a
+            href="#"
+            class="text-base lg:text-lg md:text-sm transition-all hover:text-[var(--primary-color)] cursor-pointer"
+          >
+            <i class="fa-solid fa-dumbbell"></i>
+            Luyện Đề
+          </a>
+          <a
+            href="../download/index.html"
+            class="text-base lg:text-lg md:text-sm transition-all hover:text-[var(--primary-color)] cursor-pointer"
+          >
+            <i class="fa-solid fa-download"></i>
+            Tải ứng dụng
+          </a>
+        </div>
+
+        <div class="hidden md:flex gap-4">
+          <a
+            id="login2"
+            href="../login/index.html"
+            class="px-1 py-1 lg:px-4 lg:py-2 text-sm lg:text-base hover:border-gray-600 transition-all bg-white border-gray-400 border-2 rounded-2xl font-bold text-black"
+          >
+            Đăng nhập
+          </a>
+          <a
+            id="logout2"
+            href="#"
+            class="hidden px-1 py-1 lg:px-4 lg:py-2 text-sm lg:text-base hover:border-gray-600 transition-all bg-white border-gray-400 border-2 rounded-2xl font-bold text-black"
+          >
+            Đăng xuất
+          </a>
+          <a
+            href="../learn/index.html"
+            class="px-1 py-1 lg:px-4 lg:py-2 text-sm lg:text-base hover:bg-[var(--thir-color)] hover:border-[var(--thir-color)] transition-all bg-[var(--primary-color)] rounded-2xl font-bold text-white border-[var(--primary-color)] border-2"
+          >
+            Bắt đầu
+          </a>
+        </div>
+
+        <!-- Icon menu (chỉ hiện trên mobile) -->
+        <button
+          class="md:hidden text-2xl hover:text-[var(--primary-color)] transition-all"
+          id="bar"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+      <div
+        id="subNav"
+        class="bg-[#DEF7F0] hidden shadow-md w-full backdrop-blur-md absolute top-[100%] animate__animated animate__fadeInRight"
+      >
+        <div class="">
+          <a
+            href="../index.html"
+            class="w-full px-5 py-3 block hover:bg-[var(--primary-color)] hover:text-white transition-all"
+            >Trang chủ</a
+          >
+        </div>
+        <div class="">
+          <a
+            href="../learn/index.html"
+            class="w-full px-5 py-3 block hover:bg-[var(--primary-color)] hover:text-white transition-all"
+            >Học tập</a
+          >
+        </div>
+        <div class="">
+          <a
+            href="#"
+            class="w-full px-5 py-3 block hover:bg-[var(--primary-color)] hover:text-white transition-all"
+            >Luyện đề</a
+          >
+        </div>
+        <div id="login1" class="">
+          <a
+            href="../login/index.html"
+            class="w-full px-5 py-3 block hover:bg-[var(--primary-color)] hover:text-white transition-all"
+            >Đăng nhập</a
+          >
+        </div>
+        <div id="logout1" class="hidden">
+          <a
+            href="#"
+            class="w-full px-5 py-3 block hover:bg-[var(--primary-color)] hover:text-white transition-all"
+            >Đăng xuất</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <div
+      class="_breakcrumb w-full bg-[linear-gradient(90deg,rgba(165,233,214,0.6),rgba(165,233,214,0.3))]"
+    >
+      <div class="bg-[url('../public/assets/img/sub_banner_2.png')]">
+        <div
+          class="animate__animated animate__slideInDown w-full pt-[120px] pb-3 flex gap-4 items-center text-2xl uppercase font-bold justify-center"
+        >
+          <a
+            href="../index.html"
+            class="text-center text-[var(--primary-color)] hover:text-[var(--thir-color)]"
+            >Trang chủ</a
+          >
+          <span class="text-[var(--primary-color)]">|</span>
+          <p class="">Luyện đề</p>
+        </div>
+        <p class="text-center pb-7 text-lg font-bold" id="descTyping"></p>
+      </div>
+    </div>
+
+    <div class="w-full">
+      <div class="container mx-auto">
+        <div class="mt-10 flex flex-col lg:flex-row gap-8">
+          <!-- Left Side - Quick Info -->
+          <div class="w-full lg:w-1/3">
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+              <h3 class="text-xl font-semibold text-[#354764] mb-4">
+                Thông Tin Nhanh
+              </h3>
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <div class="bg-blue-100 p-2 rounded-full mr-3">
+                    <i class="fas fa-info-circle text-[#354764]"></i>
+                  </div>
+                  <div>
+                    <p class="font-medium">
+                      Số câu hỏi:
+                      <span class="text-[#354764]">30 Câu trắc nghiệm</span>
+                    </p>
+                    <p class="text-sm text-gray-500">
+                      Ngẫu nhiên từ ngân hàng đề thi
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="bg-blue-100 p-2 rounded-full mr-3">
+                    <i class="fas fa-trophy text-yellow-500"></i>
+                  </div>
+                  <div>
+                    <p class="font-medium">
+                      Phần thưởng:
+                      <span class="text-[#354764]">Chứng nhận</span>
+                    </p>
+                    <p class="text-sm text-gray-500">Dành cho top cao nhất</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="bg-blue-100 p-2 rounded-full mr-3">
+                    <i class="fas fa-clock text-green-500"></i>
+                  </div>
+                  <div>
+                    <p class="font-medium">
+                      Thời gian:
+                      <span class="text-[#354764]">Tùy chỉnh</span>
+                    </p>
+                    <p class="text-sm text-gray-500">
+                      Linh hoạt thời gian kiểm tra
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Start Exam Button -->
+            <button
+              id="startExamBtn"
+              class="w-full bg-gradient-to-r bg-[var(--primary-color)] hover:bg-[var(--thir-color)] text-white font-bold py-4 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 mb-6"
+            >
+              <i class="fas fa-play mr-2"></i> BẮT ĐẦU THI NGAY
+            </button>
+
+            <!-- Timer Selection -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <h3 class="text-xl font-semibold text-[#354764] mb-4">
+                Tùy Chọn Thời Gian (không quá 360 phút)
+              </h3>
+              <div class="grid grid-cols-2 gap-3">
+                <button
+                  class="timer-option bg-blue-100 hover:bg-blue-200 text-[#354764] py-2 px-4 rounded transition"
+                >
+                  15 phút
+                </button>
+                <button
+                  class="timer-option bg-blue-100 hover:bg-blue-200 text-[#354764] py-2 px-4 rounded transition"
+                >
+                  45 phút
+                </button>
+                <button
+                  class="timer-option bg-blue-100 hover:bg-blue-200 text-[#354764] py-2 px-4 rounded transition"
+                >
+                  60 phút
+                </button>
+                <button
+                  class="timer-option bg-blue-100 hover:bg-blue-200 text-[#354764] py-2 px-4 rounded transition"
+                >
+                  120 phút
+                </button>
+              </div>
+              <div class="mt-4">
+                <button
+                  id="customTimeBtn"
+                  class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition"
+                >
+                  Tùy chỉnh thời gian
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side - Rules and History -->
+          <div class="w-full lg:w-2/3">
+            <!-- Tabs -->
+            <div class="bg-white rounded-t-lg shadow-md">
+              <div class="flex border-b">
+                <button
+                  id="rulesTag"
+                  class="tab-btn py-3 px-6 font-medium text-[var(--primary-color)] border-b-2 border-[var(--primary-color)]"
+                >
+                  <i class="fas fa-book-open mr-2"></i>Thể Lệ Bài Thi
+                </button>
+                <button id="historyTag" class="tab-btn py-3 px-6 font-medium">
+                  <i class="fas fa-history mr-2"></i>Lịch Sử Làm Bài
+                </button>
+              </div>
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="bg-white rounded-b-lg shadow-md p-6">
+              <!-- Rules Content -->
+              <div
+                id="rulesContent"
+                class="animate__animated opacity-0 animate__fadeIn"
+              >
+                <h3 class="text-2xl font-bold uppercase text-[#354764] mb-4">
+                  Thể lệ cuộc thi
+                </h3>
+
+                <div class="prose max-w-none">
+                  <h4 class="text-xl font-semibold mt-6 mb-3 text-[#354764]">
+                    1. Quy định chung
+                  </h4>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li>Cuộc thi dành cho tất cả học sinh có nhu cầu</li>
+                    <li>Đề thi gồm 2 phần: Trắc nghiệm và Tự luận</li>
+                    <li>
+                      Hệ thống tự động chấm điểm và hiển thị kết quả ngay sau
+                      khi hoàn thành
+                    </li>
+                  </ul>
+
+                  <h4 class="text-xl font-semibold mt-6 mb-3 text-[#354764]">
+                    2. Cách tính điểm
+                  </h4>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li>Đối với Trắc nghiệm lựa chọn: Mỗi câu 1 điểm</li>
+                  </ul>
+
+                  <h4 class="text-xl font-semibold mt-6 mb-3 text-[#354764]">
+                    3. Yêu cầu hệ thống
+                  </h4>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li>Kết nối internet ổn định</li>
+                    <li>Không sử dụng các công cụ hỗ trợ hoặc gian lận</li>
+                  </ul>
+
+                  <div
+                    class="bg-yellow-50 rounded-lg p-4 mt-6 border border-yellow-200"
+                  >
+                    <div class="flex items-start">
+                      <div class="text-yellow-500 mr-3 text-2xl">
+                        <i class="fas fa-exclamation-circle"></i>
+                      </div>
+                      <div>
+                        <p class="font-semibold">Lưu ý:</p>
+                        <p class="text-sm">
+                          Khi bắt đầu làm bài, hệ thống sẽ không dừng lại cho
+                          đến khi hết giờ hoặc bạn nộp bài. Nếu thoát trong quá
+                          trình làm bài, kết quả sẽ không được lưu lại.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- History Content -->
+              <div
+                id="historyContent"
+                class="hidden animate__animated opacity-0 animate__fadeIn"
+              >
+                <h3 class="text-2xl font-bold text-[#354764] mb-4 uppercase">
+                  Lịch sử làm bài
+                </h3>
+
+                <div class="overflow-x-auto">
+                  <table class="min-w-full bg-white rounded-lg overflow-hidden">
+                    <thead class="bg-[var(--primary-color)] text-white">
+                      <tr>
+                        <th class="py-3 px-4 text-left">Ngày thi</th>
+                        <th class="py-3 px-4 text-left">Điểm số</th>
+                        <th class="py-3 px-4 text-left">Thời gian</th>
+                        <th class="py-3 px-4 text-left">Chi tiết</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200" id="history">
+                      <tr>
+                        <th colspan="4" class="text-center py-6 px-4">
+                          Hãy
+                          <a
+                            href="../login/index.html"
+                            class="underline text-blue-600"
+                            >đăng nhập</a
+                          >
+                          để lưu lại lịch sử làm bài
+                        </th>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div
+                  class="mt-6 bg-gray-50 p-4 rounded-lg border border-gray-200"
+                >
+                  <h4 class="text-lg font-semibold mb-3 text-gray-700">
+                    Thống kê cá nhân
+                  </h4>
+                  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="text-center p-3 bg-white rounded-lg shadow-sm">
+                      <p class="text-2xl font-bold text-[#354764]" id="lanThi">
+                        0
+                      </p>
+                      <p class="text-sm text-gray-500">Lần thi</p>
+                    </div>
+                    <div class="text-center p-3 bg-white rounded-lg shadow-sm">
+                      <p
+                        class="text-2xl font-bold text-green-600"
+                        id="trungBinh"
+                      >
+                        0.0
+                      </p>
+                      <p class="text-sm text-gray-500">Điểm trung bình</p>
+                    </div>
+                    <div class="text-center p-3 bg-white rounded-lg shadow-sm">
+                      <p
+                        class="text-2xl font-bold text-purple-600"
+                        id="caoNhat"
+                      >
+                        0
+                      </p>
+                      <p class="text-sm text-gray-500">Điểm cao nhất</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer
+      class="mt-32 bg-[linear-gradient(90deg,rgba(165,233,214,0.6),rgba(165,233,214,0.3))]"
+    >
+      <div class="bg-[url('./public/assets/img/sub_banner_2.png')]">
+        <img src="../public/assets/img/banner_mask_2.png" alt="banner_mask_2" />
+        <div
+          class="container mt-16 pb-10 mx-auto grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1"
+        >
+          <div>
+            <img src="../public/assets/img/logo.png" alt="logo" class="w-28" />
+            <p class="mt-3 text-justify w-[calc(100%-60px)]">
+              Hệ thống thi trắc nghiệm Toán học 9 và Đề thi vào 10.
+            </p>
+
+            <div class="mt-6 flex gap-1">
+              <a
+                href="#"
+                class="text-lg rounded-sm py-1 px-2 bg-[var(--primary-color)] hover:bg-[var(--thir-color)] text-white transition-all cursor-pointer"
+              >
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a
+                href="#"
+                class="text-lg rounded-sm py-1 px-2 bg-[var(--primary-color)] hover:bg-[var(--thir-color)] text-white transition-all cursor-pointer"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="text-lg rounded-sm py-1 px-2 bg-[var(--primary-color)] hover:bg-[var(--thir-color)] text-white transition-all cursor-pointer"
+              >
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="text-lg rounded-sm py-1 px-2 bg-[var(--primary-color)] hover:bg-[var(--thir-color)] text-white transition-all cursor-pointer"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+          <div class="md:block hidden">
+            <h2 class="mb-8 text-3xl font-bold uppercase">Danh mục</h2>
+            <div class="space-y-2 flex flex-col text-lg">
+              <a
+                href="#"
+                class="inline-block transition-all duration-300 ease-in-out hover:text-[var(--primary-color)] hover:pl-2"
+                >Trang chủ</a
+              >
+              <a
+                href="#"
+                class="inline-block transition-all duration-300 ease-in-out hover:text-[var(--primary-color)] hover:pl-2"
+                >Học tập</a
+              >
+              <a
+                href="#"
+                class="inline-block transition-all duration-300 ease-in-out hover:text-[var(--primary-color)] hover:pl-2"
+                >Luyện đề</a
+              >
+              <a
+                href="#"
+                class="inline-block transition-all duration-300 ease-in-out hover:text-[var(--primary-color)] hover:pl-2"
+                >Tải ứng dụng</a
+              >
+              <a
+                href="#"
+                class="inline-block transition-all duration-300 ease-in-out hover:text-[var(--primary-color)] hover:pl-2"
+                >Liên hệ</a
+              >
+            </div>
+          </div>
+          <div class="md:block hidden">
+            <h2 class="mb-8 text-3xl font-bold uppercase">Thông tin</h2>
+            <div class="space-y-2 flex flex-col text-lg">
+              <a
+                href="#"
+                class="inline-block transition-all duration-300 ease-in-out hover:text-[var(--primary-color)] hover:pl-2"
+                >Blog</a
+              >
+              <a
+                href="#"
+                class="inline-block transition-all duration-300 ease-in-out hover:text-[var(--primary-color)] hover:pl-2"
+                >Về chúng tôi</a
+              >
+              <a
+                href="#"
+                class="inline-block transition-all duration-300 ease-in-out hover:text-[var(--primary-color)] hover:pl-2"
+                >Liên hệ</a
+              >
+              <a
+                href="#"
+                class="inline-block transition-all duration-300 ease-in-out hover:text-[var(--primary-color)] hover:pl-2"
+                >Câu hỏi thường gặp</a
+              >
+            </div>
+          </div>
+          <div class="hidden lg:block">
+            <h2 class="mb-8 text-3xl font-bold uppercase">Liên hệ</h2>
+            <div class="space-y-2 flex flex-col text-lg">
+              <p>
+                <i
+                  class="fa-solid fa-location-dot text-[var(--primary-color)]"
+                ></i>
+                Số 123, Đường ABC, Thành Phố Cà Mau
+              </p>
+              <p>
+                <i class="fa-solid fa-phone text-[var(--primary-color)]"></i>
+                0123456789
+              </p>
+              <p>
+                <i class="fa-solid fa-envelope text-[var(--primary-color)]"></i>
+                email@gmail.com
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="timerModal" class="fixed top-0 left-0 right-0 bottom-0 hidden">
+      <div
+        class="fixed top-0 left-0 right-0 bottom-0 bg-black opacity-15"
+        id="childTimerModal"
+      ></div>
+      <div
+        class="sm:p-10 p-4 sm:w-[420px] w-[320px] bg-white shadow-md rounded-3xl fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      >
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl font-bold text-[var(--primary-color)]">
+            Tùy Chỉnh Thời Gian
+          </h3>
+          <button id="closeModal" class="text-gray-500 hover:text-red-500">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="mb-10 mt-8">
+          <label class="block text-gray-700 mb-2">Nhập thời gian (phút):</label>
+          <input
+            type="number"
+            id="customTimeInput"
+            min="1"
+            max="360"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[var(--primary-color)]"
+            placeholder="Ví dụ: 25"
+          />
+        </div>
+        <button
+          id="confirmTimeBtn"
+          class="w-full bg-[var(--primary-color)] hover:bg-[var(--thir-color)] text-white py-2 px-4 rounded-md transition"
+        >
+          Xác Nhận
+        </button>
+      </div>
+    </div>
+
+    <script src="../index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script type="module" src="./textEffect.js"></script>
+    <script type="module" src="./changeTag.js"></script>
+    <script type="module" src="./getTime.js"></script>
+    <script type="module" src="./main.js"></script>
+    <script src="../util/index.js"></script>
+  </body>
+</html>
