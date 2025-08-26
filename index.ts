@@ -31,7 +31,11 @@ app.use(
 );
 app.use(express.static("public/Math_Speed_v1"));
 
-const allowedOrigins = ["http://localhost:3000", "http://127.0.0.1:5500"];
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://127.0.0.1:5500",
+  "https://lhnhidev.github.io/ms-product",
+];
 
 app.use(
   cors({

@@ -53,10 +53,10 @@ export const loginUser = async (req: Request, res: Response) => {
       return;
     }
     res.status(200).json(user);
-    addAccessToken(res, {
-      id: user._id.toString(),
-      role: user.quyen,
-    });
+    // addAccessToken(res, {
+    //   id: user._id.toString(),
+    //   role: user.quyen,
+    // });
   } catch (error) {
     res.status(500).json({ message: "Error logging in", error });
   }

@@ -63,6 +63,7 @@ document
     }
 
     if (isValid) {
+      console.log(username, password);
       const response = await fetch(LOGIN, {
         method: "POST",
         headers: {
@@ -70,6 +71,8 @@ document
         },
         body: JSON.stringify({ username, password }),
       });
+
+      console.log("response dòng 66: ", response);
 
       const data = await response.json();
 
