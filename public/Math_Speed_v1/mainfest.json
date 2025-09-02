@@ -15,7 +15,7 @@
       "purpose": "maskable"
     },
     {
-      "src": "./public/assets/img/logo.ico",
+      "src": "./public/assets/img/logo.png",
       "sizes": "512x512",
       "type": "image/png/ico",
       "purpose": "maskable"
